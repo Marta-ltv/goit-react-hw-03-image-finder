@@ -12,24 +12,16 @@ code {
     monospace;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ol,
-p,
-ul {
+* {
   margin: 0;
+  padding: 0;
 }
 
 ol, ul {
   list-style: none;
-  padding: 0;
 }
 
-img {
+/* img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -39,4 +31,4 @@ section {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-}
+} */
