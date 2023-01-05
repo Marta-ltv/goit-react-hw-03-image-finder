@@ -38,7 +38,7 @@ export class SearchForm extends Component {
         </Button>
         <Input
           type="text"
-          name="query"
+          name="qwery"
           value={this.state.value}
           onChange={this.handleChange}
           placeholder="Search images and photos"
