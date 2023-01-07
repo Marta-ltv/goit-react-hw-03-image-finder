@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
+import Button from './Button/Button';
+import ImageInfo from './ImageInfo/ImageInfo';
+import Modal from './Modal/Modal';
+import Searchbar from './Searchbar/Searchbar';
 
-import { Searchbar } from 'components/Searchbar/Searchbar';
-import { Modal } from 'components/Modal/Modal';
-import { ImageInfo } from 'components/ImageInfo/ImageInfo';
-import { Button } from 'components/Button/Button.styled';
+class App extends Component {
+  state = {
+    showModal: false,
+    searchQuery: '',
+    page: 1,
+    src: '',
+    alt: '',
+    moreVisible: false,
+  };
 
-
-export class App extends Component {
-   
-    state = {
-        showNodal: false,
-        searchQuery: '',
-        page: 1,
-        src: '',
-        alt: '',
-        moreVisible: false,
-    };
-
- toggleModal = e => {
+  toggleModal = e => {
     this.setState(({ showModal }) => ({ showModal: !showModal }));
 
     if (!this.state.showModal) {
@@ -68,3 +65,5 @@ export class App extends Component {
     );
   }
 }
+
+export default App;

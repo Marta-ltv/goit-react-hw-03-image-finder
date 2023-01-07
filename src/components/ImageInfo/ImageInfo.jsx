@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import Loader from 'components/Loader/Loader';
+import ImageGallery from 'components/ImageGallery/ImageGallery';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-
-import {ImageGallery} from '../ImageGallery/ImageGallery';
-import { Loader } from 'components/Loader/Loader';
-import { getImages } from 'components/services/api';
+import { getImages } from 'services/api';
 import PropTypes from 'prop-types';
 
 const Status = {
@@ -13,7 +12,7 @@ const Status = {
   REJECTED: 'rejected',
 };
 
-export class ImageInfo extends Component {
+class ImageInfo extends Component {
   state = {
     status: Status.IDLE,
     error: null,
@@ -112,3 +111,5 @@ export class ImageInfo extends Component {
     }
   }
 }
+
+export default ImageInfo;

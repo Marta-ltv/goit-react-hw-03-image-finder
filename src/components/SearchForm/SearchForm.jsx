@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import {FormSearch, Button, Input} from './SearchForm.styled';
+import s from './SearchForm.module.css';
 
 import PropTypes from 'prop-types';
 import { IconContext } from 'react-icons';
 import { FiSearch } from 'react-icons/fi';
 
-export class SearchForm extends Component {
+class SearchForm extends Component {
   state = { value: '' };
 
   static propTypes = {
@@ -25,27 +25,32 @@ export class SearchForm extends Component {
 
   render() {
     return (
-      <FormSearch onSubmit={this.handleSubmit}>
-        <Button
+      <form className={s.searchForm} onSubmit={this.handleSubmit}>
+        <button
           onSubmit={this.handleSubmit}
           type="submit"
+          className={s.searchForm__button}
         >
           <IconContext.Provider value={{ size: '1.5em' }}>
             <div>
               <FiSearch />
             </div>
           </IconContext.Provider>
-        </Button>
-        <Input
+
+          <span className={s.ComponentsearchForm__button__labe}></span>
+        </button>
+        <input
           type="text"
           name="qwery"
           value={this.state.value}
           onChange={this.handleChange}
           placeholder="Search images and photos"
+          className={s.searchForm__input}
           autoComplete="off"
           autoFocus
-        ></Input>
-      </FormSearch>
+        ></input>
+      </form>
     );
   }
 }
+export default SearchForm;

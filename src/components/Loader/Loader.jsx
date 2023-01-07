@@ -1,11 +1,13 @@
 import React from 'react';
 import { InfinitySpin } from 'react-loader-spinner';
-import { Wrapper } from './Loader.styled';
+import s from './Loader.module.css';
 
-export const Loader = () => {
+const Loader = () => {
   return (
-    <Wrapper>
-      <InfinitySpin width="200" color="#145e2a" />
-    </Wrapper>
+    <div className={s.wrapper}>
+      <InfinitySpin width="200" color="#3f51b5" />
+    </div>
   );
 };
+
+export default Loader;

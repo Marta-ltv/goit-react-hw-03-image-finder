@@ -1,20 +1,18 @@
 import React from 'react';
+import SearchForm from 'components/SearchForm/SearchForm';
+import s from './Searchbar.module.css';
 import PropTypes from 'prop-types';
-import { SearchForm } from 'components/SearchForm/SearchForm';
-import { Header } from './Searchbar.styled';
 
-export const Searchbar = ({ onSubmit }) => {
+
+const Searchbar = ({ onSubmit }) => {
   return (
-    <Header>
+    <header className={s.searchbar}>
       <SearchForm onSubmit={onSubmit} />
-    </Header>
+    </header>
   );
 };
-
 Searchbar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-
-
-  
+export default Searchbar;

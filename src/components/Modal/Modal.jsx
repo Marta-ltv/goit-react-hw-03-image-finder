@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 
-import {Overlay, ModalItem} from './Modal.styled';
+import s from './Modal.module.css';
 import PropTypes from 'prop-types';
 
 const modalRoot = document.querySelector('#modal-root');
 
-export class Modal extends Component {
+class Modal extends Component {
   state = {};
 
   static propTypes = {
@@ -36,13 +36,12 @@ export class Modal extends Component {
 
   render() {
     return createPortal(
-      <Overlay onClick={this.handleBackdropClick}>
-        <ModalItem>{this.props.children}</ModalItem>
-      </Overlay>,
+      <div className={s.Overlay} onClick={this.handleBackdropClick}>
+        <div className={s.Modal}>{this.props.children}</div>
+      </div>,
       modalRoot
     );
   }
 }
 
-
-
+export default Modal;
